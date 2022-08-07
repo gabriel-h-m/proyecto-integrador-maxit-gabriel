@@ -1,3 +1,22 @@
 .row {
     padding: 20px;
+    border: 1px solid gray;
+    background-color: ghostwhite;
+    /* background-color:whitesmoke; */
+}
+
+div {
+    /* --- */
+    margin: 0px -5px 2px 5px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.titulo {
+    position: relative;
+    top: 5px;
+    color: ghostwhite;
+    background-color: rgb(35, 35, 35);
+    border-radius: 25px 25px 0px 0px;
+
+    padding: 15px;
 }

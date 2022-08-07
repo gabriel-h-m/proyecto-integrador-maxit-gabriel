@@ -1,35 +1,45 @@
 .row {
     padding: 20px;
+    border: 1px solid gray;
 }
 
 div {
-    background-color: steelblue;
+    background-color: #549edb;
     text-align: center;
+    /* --- */
+    margin: 0px -5px 2px 5px;
+    border-radius: 0px 0px 25px 25px;
 }
 
 #nombre {
     font-weight: bold;
+    font-size: 1.3em;
     margin-top: 40%;
+}
+
+strong {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:lavenderblush;
 }
 
 @media (min-width: 576px) {
     #fotoPerfil {
         position: absolute;
-        width: 15%;
+        width: 17%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px gray;
+        box-shadow: 3px 3px 3px rgb(32, 32, 116);
         left: 3%;
-        top: 880px;
+        top: 480px;
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.5px) {
     #fotoPerfil {
         position: absolute;
         width: 35%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px gray;
+        box-shadow: 3px 3px 3px rgb(32, 32, 116);
         left: 32%;
-        top: 880px;
+        top: 530px;
     }
 }

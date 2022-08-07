@@ -1,0 +1,53 @@
+<section class="text-center text-lg-start">
+    <div class="card bg-dark text-white mb-3">
+        <div class="row g-0 d-flex align-items-center">
+            <div class="col-lg-4 d-none d-lg-flex">
+                <img src="../../../assets/img/login.jpg" alt=""
+                    class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+            </div>
+            <div class="col-lg-8">
+                <div class="card bg-dark text-white py-5 px-md-5">
+                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    <p class="text-white-50 mb-5">Por favor, ingrese su usuario y password debajo</p>
+                    <hr class="my-4">
+                    
+                    <form #f="ngForm" (ngSubmit)="onLogin()" novalidate >
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" required />
+                            <label class="form-label" for="nombreUsuario">Usuario</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" [(ngModel)]="password" required [ngModelOptions]="{standalone: true}" />
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+
+                        <!-- 2 column grid layout for inline styling -->
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <!-- Checkbox -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="recordarme" checked />
+                                    <label class="form-check-label" for="recordarme"> Recordarme </label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <!-- Simple link -->
+                                <a href="#!">¿Olvidaste tu password?</a>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+                        <!-- Submit button -->
+                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

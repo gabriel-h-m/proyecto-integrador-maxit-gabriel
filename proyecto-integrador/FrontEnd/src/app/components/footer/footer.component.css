@@ -1,5 +1,5 @@
 .row {
-    background-color: teal;
+    /* background-color: teal; */
 }
 
 footer {
@@ -10,3 +10,10 @@ footer {
     text-align: center;
     box-shadow: 5px 5px 10px #000000;
 }
+
+.vl {
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    height: 12px;
+    margin: 0 10px;
+  }

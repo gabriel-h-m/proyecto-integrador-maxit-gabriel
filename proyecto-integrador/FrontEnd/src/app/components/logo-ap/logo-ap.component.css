@@ -4,7 +4,11 @@
     align-items: center;
 }
 
-#logoAP {
+#logoAP2 {
+    display: none;
+}
+
+#logoAP1 {
     width: 150px;
 }
 
@@ -21,6 +25,10 @@ img {
     font-weight: bold;
 }
 
+.redes img {
+    margin: 0.5em;
+}
+
 @media (max-width: 575px) {
     .contenedor {
         flex-direction: column;
@@ -32,7 +40,12 @@ img {
         align-items: center;
     }
 
-    .redes img {
-        margin: 0.5em;
+    #logoAP1 {
+        display: none;
+    }
+
+    #logoAP2 {
+        display: block;
+        width: 70px;
     }
 }
