@@ -3,9 +3,24 @@
         <div class="logo">
             <img src="../../../assets/img/logo_AP1.png" alt="" id="logoAP1">
             <img src="../../../assets/img/logo_AP2.png" alt="" id="logoAP2">
+            <hr class="linea-vertical" />
+            <span style="color: white;">&#123; #YoProgramo &#125;</span>
+            <hr class="linea-vertical der" />
         </div>
-        <div class="redes">
-            <a href="https://github.com/gabriel-h-m"><img src="../../../assets/img/logo_github2.png" alt=""></a>
+
+        <div class="links">
+            <div class="redes">
+                <div class="github1">
+                    <a href="https://github.com/gabriel-h-m"><img src="../../../assets/img/logo_github1.png" alt=""
+                            data-toggle="tooltip" title="Github"></a>
+
+                </div>
+                <div class="github2">
+                    <a href="https://github.com/gabriel-h-m"><img src="../../../assets/img/logo_github2.png" alt=""
+                            data-toggle="tooltip" title="Github"></a>
+
+                </div>
+            </div>
             <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Login</button>
             <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Logout</button>
         </div>

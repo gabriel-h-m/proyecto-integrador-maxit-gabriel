@@ -2,6 +2,10 @@
     /* background-color: teal; */
 }
 
+.bg-dark {
+    padding: 5px 10px;
+}
+
 footer {
     color:floralwhite;
     font-size: 16px;
@@ -9,6 +13,7 @@ footer {
     flex-direction: column;
     text-align: center;
     box-shadow: 5px 5px 10px #000000;
+    margin-top: 15px;
 }
 
 .vl {
@@ -17,3 +22,17 @@ footer {
     height: 12px;
     margin: 0 10px;
   }
+
+#vA {
+    padding-right: 50px;
+    float: right;
+}
+
+a {
+    all: unset;
+}
+
+#vA a:hover {
+    cursor: pointer;
+    color: #09a8f1;
+}
