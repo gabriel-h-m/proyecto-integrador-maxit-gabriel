@@ -1,5 +1,5 @@
 .row {
-    padding: 20px;
+    padding: 40px;
     border: 1px solid gray;
 }
 
@@ -11,6 +11,19 @@ div {
     border-radius: 0px 0px 25px 25px;
 }
 
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    /* text-shadow: 1.5px 1.5px 3px #676767; */
+    /* text-shadow: 0px 2px 3px #666, 0 0 #000; */
+    text-shadow: 0px 2px 3px rgb(1, 66, 119), 0 0 #000;
+    /* color: #014074; */
+    color: transparent;
+    font-size: 45px;
+    padding-bottom: 15px;
+}
+
 #nombre {
     font-weight: bold;
     font-size: 1.3em;
@@ -18,28 +31,48 @@ div {
 }
 
 strong {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:lavenderblush;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: lavenderblush;
 }
 
-@media (min-width: 576px) {
-    #fotoPerfil {
-        position: absolute;
-        width: 17%;
-        border-radius: 100%;
-        box-shadow: 3px 3px 3px rgb(32, 32, 116);
-        left: 3%;
-        top: 480px;
-    }
-}
-
-@media (max-width: 575.5px) {
+@media (max-width: 942.5px) {
     #fotoPerfil {
         position: absolute;
         width: 35%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px rgb(32, 32, 116);
         left: 32%;
-        top: 530px;
+        top: 730px;
+        max-width: 100%;
+
+    }
+    .row {
+        padding-top: 200px;
+        border: 1px solid gray;
     }
 }
+
+@media (min-width: 943px) and (max-width: 1375.5px) {
+    #fotoPerfil {
+        position: absolute;
+        width: 17%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgb(32, 32, 116);
+        left: 3%;
+        top: 73%;
+        /* top: 480px; */
+    }
+}
+
+@media (min-width: 1376px) {
+    #fotoPerfil {
+        position: absolute;
+        width: 17%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgb(32, 32, 116);
+        left: 3%;
+        top: 68%;
+        /* top: 480px; */
+    }
+}
+

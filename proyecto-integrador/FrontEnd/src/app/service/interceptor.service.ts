@@ -6,6 +6,7 @@ import { TokenService } from "./token.service";
 @Injectable({
     providedIn: 'root'
 })
+
 export class InterceptorService {
     constructor(private tokenService: TokenService) {}
 

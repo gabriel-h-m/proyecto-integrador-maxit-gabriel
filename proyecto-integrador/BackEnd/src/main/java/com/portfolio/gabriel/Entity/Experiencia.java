@@ -10,8 +10,8 @@ import javax.persistence.Id;
 public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private int id;
+    
     private String nombreExp;
     private String descripcionExp;
 

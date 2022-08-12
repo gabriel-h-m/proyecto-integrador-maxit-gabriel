@@ -7,7 +7,13 @@ import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  styles: [`
+    :host {
+        display: inline-block;
+        background-color: black;
+    }
+  `]
 })
 
 export class LoginComponent implements OnInit {

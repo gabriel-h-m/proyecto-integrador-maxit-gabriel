@@ -4,10 +4,10 @@
 }
 
 div {
+    background-color: #c2c2d6;
     /* --- */
     margin: 0px -5px 2px 5px;
     border-radius: 0px 0px 25px 25px;
-    background-color: #d6dbdf;
 }
 
 .contenedor {

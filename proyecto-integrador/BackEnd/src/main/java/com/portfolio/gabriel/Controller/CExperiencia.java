@@ -49,6 +49,10 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
+        if (StringUtils.isBlank(dtoExp.getDescripcionExp())) {
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
+        }
+        
         if (sExperiencia.existsByNombreExp(dtoExp.getNombreExp())) {
             return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         }
@@ -71,6 +75,10 @@ public class CExperiencia {
     
         if (StringUtils.isBlank(dtoExp.getNombreExp())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        
+        if (StringUtils.isBlank(dtoExp.getDescripcionExp())) {
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         
         Experiencia experiencia = sExperiencia.getOne(id).get();

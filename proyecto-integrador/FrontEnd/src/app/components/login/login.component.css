@@ -4,7 +4,7 @@
 }
 
 section {
-    /* margin: 80px 80px 80px 80px; */
+    margin: 60px 220px 220px 220px;
 }
 
 h2, p {
@@ -16,12 +16,37 @@ h2, p {
     margin: auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
     .rounded-tr-lg-0 {
         border-top-right-radius: 0;
     }
 
     .rounded-bl-lg-5 {
         border-bottom-left-radius: 0.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+	.rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+    }
+
+    .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+    }
+	
+    section {
+		/* margin: 60 220 220 220; */
+		
+		width: 70%;
+		padding: 100px;
+		
+		
+		margin: auto;
+		/* margin: 60 220 220 220; */
+	}
+
+    .d-none {
+        display: none;
     }
 }

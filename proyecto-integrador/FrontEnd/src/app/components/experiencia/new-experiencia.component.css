@@ -1,0 +1,8 @@
+@import "../../../assets/css/form-añadirNuevaExperiencia.css";
+@import "../../../assets/css/btn-enviar.css";
+
+.botones {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}

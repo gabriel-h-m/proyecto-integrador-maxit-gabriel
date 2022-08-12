@@ -14,6 +14,7 @@
 
 img {
     width: 40px;
+    margin: 0.5em;
 }
 
 .contenedor .redes {
@@ -23,10 +24,7 @@ img {
 .btn {
     border-width: 0.1em;
     font-weight: bold;
-}
-
-.redes img {
-    margin: 0.5em;
+    margin-right: 20px;
 }
 
 /* ------------------------------------------------- */

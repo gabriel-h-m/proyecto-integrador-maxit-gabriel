@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Educacion } from 'src/app/model/educacion';
+import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
@@ -8,8 +8,8 @@ import { EducacionService } from 'src/app/service/educacion.service';
   templateUrl: './edit-educacion.component.html',
   styleUrls: ['./edit-educacion.component.css']
 })
-export class EditEducacionComponent implements OnInit {
 
+export class EditEducacionComponent implements OnInit {
   educacion: Educacion = null;
 
   constructor(private sEducacionService: EducacionService, private activatedRouter: ActivatedRoute,
