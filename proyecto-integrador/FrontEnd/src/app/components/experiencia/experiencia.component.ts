@@ -19,7 +19,7 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.cargarExperiencia();
 
-    if (this.tokenService.getToken()) {
+    if(this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
@@ -30,15 +30,17 @@ export class ExperienciaComponent implements OnInit {
     this.sExperiencia.lista().subscribe(data => { this.exp = data; })
   }
 
-  delete(id?: number) {
-    if (id != undefined) {
-      this.sExperiencia.delete(id).subscribe(
-        data => {
-          this.cargarExperiencia();
-        }, err => {
-          alert("No se pudo eliminar la experiencia");
-        }
-      )
+  delete(id?: number, nombreExp?:string) {
+    if(confirm("¿Está seguro de que desea eliminar el elemento '" + nombreExp + "' ?")) {
+      if (id != undefined) {
+        this.sExperiencia.delete(id).subscribe(
+          data => {
+            this.cargarExperiencia();
+          }, err => {
+            alert("No se pudo eliminar la experiencia");
+          }
+        )
+      }
     }
   }
 }

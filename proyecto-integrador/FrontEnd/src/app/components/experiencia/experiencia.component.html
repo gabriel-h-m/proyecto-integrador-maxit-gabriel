@@ -24,7 +24,7 @@
                             <i class="bi bi-pencil-square"></i> editar</button>
                     </td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-danger" id="eliminar" (click)="delete(Experiencia.id)">
+                        <button class="btn btn-danger" id="eliminar" (click)="delete(Experiencia.id, Experiencia.nombreExp)">
                             <i class="bi bi-x-square"></i> eliminar</button>
                     </td>
                 </tr>

@@ -12,12 +12,13 @@ div {
     border-radius: 0px 0px 25px 25px;
 }
 
-h2, h3 {
+h2,
+h3 {
     display: inline;
 }
 
 h3 {
-    color:#4d4d4d;
+    color: #4d4d4d;
 }
 
 .titulo {
@@ -36,35 +37,26 @@ h3 {
     background-color: #0ee355;
 } */
 
-#editar {
-    word-spacing: 5px;
-}
-
+#editar,
 #eliminar {
     word-spacing: 5px;
+    letter-spacing: 1px;
 }
 
-#editar:hover {
+#editar:hover, #eliminar:hover {
     color: black;
-    font-weight: bold;
+    font-weight: 600;
+    -webkit-text-stroke: 1px;
+} 
+
+#editar:hover {
     background-color: #c3c1c1;
 }
 
 #eliminar:hover {
-    color: black;
-    font-weight: bold;
     background-color: #ee0000;
 }
 
-  i {
+i {
     font-style: normal;
-  }
-
-  /* ------------------------------------- */
-
-
-
-
-
-
-
+}

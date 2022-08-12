@@ -29,11 +29,9 @@ export class EditExperienciaComponent implements OnInit {
         this.expLaboral = data;
       }, err => {
         alert("Error al modificar la experiencia");
-        // this.router.navigate(['']);
+        this.router.navigate(['']);
       }
     )
-
-    
   }
 
   onUpdate(): void {

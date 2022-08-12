@@ -1,3 +1,5 @@
+@import "../../../assets/css/btn-añadirNuevo.css";
+
 .row {
     padding: 20px;
     border: 1px solid gray;
@@ -10,7 +12,8 @@ div {
     border-radius: 0px 0px 25px 25px;
 }
 
-h2, h3 {
+h2,
+h3 {
     display: inline;
 }
 
@@ -28,20 +31,32 @@ h3 {
     padding: 15px;
 }
 
-#nuevaEdu:hover {
+/* #nuevaEdu:hover {
     color: black;
     font-weight: bold;
     background-color: #0ee355;
+} */
+
+#editar,
+#eliminar {
+    word-spacing: 5px;
+    letter-spacing: 1px;
 }
 
-#editar:hover {
+#editar:hover, #eliminar:hover {
     color: black;
-    font-weight: 400;
+    font-weight: 600;
+    -webkit-text-stroke: 1px;
+} 
+
+#editar:hover {
     background-color: #c3c1c1;
 }
 
 #eliminar:hover {
-    color: black;
-    font-weight: 400;
     background-color: #ee0000;
+}
+
+i {
+    font-style: normal;
 }

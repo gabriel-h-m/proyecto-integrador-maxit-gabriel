@@ -1,19 +1,39 @@
-<div class="contenedor">
+<div class="form-body">
     <div class="row">
-        <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="NombreEducacion">Institución</label>
-                    <input type="text" class="form-control" id="nombreEducacion" name="nombreEducacion" [(ngModel)]="nombreEducacion" required >
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Añadir Educación</h3><img alt="" width="65" height="65" src="../../../assets/img/add-icon.jpg"
+                        id="add-icon">
+                    <p>Por favor, complete todos los campos</p>
+                    <form class="requires-validation" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="nombreEducacion" name="nombreEducacion" [(ngModel)]="nombreEducacion" placeholder="Institución" autofocus
+                                required>
+                            <div class="valid-feedback">Campo 'Institución' valido!</div>
+                            <div class="invalid-feedback">El campo 'Institución' se encuentra vacío!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="descripcionEducacion" name="descripcionEducacion" [(ngModel)]="descripcionEducacion" placeholder="Capacitación/Título obtenido"
+                                required>
+                            <div class="valid-feedback">Campo 'Capacitación' valido!</div>
+                            <div class="invalid-feedback">El campo 'Capacitación' se encuentra vacío!</div>
+                        </div>
+                        <div class="botones">
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn submit">Añadir</button>
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="cancelar" type="submit" class="btn btn-danger"
+                                    (click)="cancelar()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="descripcionEducacion">Descripción</label>
-                    <input type="text" class="form-control" id="descripcionEducacion" name="descripcionEducacion" [(ngModel)]="descripcionEducacion" required >
-                </div>
-                <button class="btn btn-primary">
-                    Añadir Educación
-                </button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

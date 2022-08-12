@@ -77,15 +77,19 @@ public class CEducacion {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DTOEducacion dtoEducacion) {
         if (!sEducacion.existsById(id)) {
-            return new ResponseEntity(new Mensaje("No existe el id"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.NOT_FOUND);
         }
         
         if (sEducacion.existsByNombreEducacion(dtoEducacion.getDescripcionEducacion()) && sEducacion.getByNombreEducacion(dtoEducacion.getNombreEducacion()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Esa educacion ya existe"), HttpStatus.BAD_REQUEST);
         }
         
         if (StringUtils.isBlank(dtoEducacion.getNombreEducacion())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El nombre de la institucion es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        
+        if (StringUtils.isBlank(dtoEducacion.getDescripcionEducacion())) {
+            return new ResponseEntity(new Mensaje("La capacitacion es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         
         Educacion educacion = sEducacion.getOne(id).get();

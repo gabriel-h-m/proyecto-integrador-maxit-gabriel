@@ -19,6 +19,11 @@ div {
     text-align: justify;
 }
 
+.seccion2 {
+    float: right;
+    margin-right: -5%;
+}
+
 .img-proyecto {
     box-shadow: 10px 10px 10px #242424;
     /* --- */
@@ -34,8 +39,16 @@ div {
     padding: 15px;
 }
 
+@media (max-width: 768px) {
+    .seccion2 {
+        padding-left: 20px;
+        margin-right: 1%;
+    }
+}
+
 @media (min-width: 768px) {
     .seccion2 {
         padding-left: 20px;
+        margin-right: 5%;
     }
 }
