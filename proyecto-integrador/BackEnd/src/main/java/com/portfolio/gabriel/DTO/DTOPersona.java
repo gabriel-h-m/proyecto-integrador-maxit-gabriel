@@ -1,49 +1,30 @@
-package com.portfolio.gabriel.Entity;
+package com.portfolio.gabriel.DTO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la restriccion de longitud")
+public class DTOPersona {
+    @NotBlank
     private String nombre;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la restriccion de longitud")
+    @NotBlank
     private String apellido;
     
-    @NotNull
+    @NotBlank
     private String descripcion;
     
+    @NotBlank
     private String img;
 
     
-    public Persona() {
+    public DTOPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public DTOPersona(String nombre, String apellido, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
         this.img = img;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {

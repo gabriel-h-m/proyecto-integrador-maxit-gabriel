@@ -19,7 +19,6 @@ public class SExperiencia {
         return rExperiencia.findAll();
     }
     
-    
     public Optional<Experiencia> getOne(int it) {
         return rExperiencia.findById(it);
     }

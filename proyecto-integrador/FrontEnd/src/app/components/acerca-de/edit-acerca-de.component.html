@@ -1,0 +1,56 @@
+<div class="form-body" *ngIf="persona">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Actualizar Persona</h3><img alt="" width="65" height="65"
+                        src="../../../assets/img/update-icon.png" id="update-icon">
+                    <p>Por favor, complete todos los campos</p>
+                    <form class="requires-validation" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre" placeholder="Nombre"
+                                autofocus required>
+                            <div class="valid-feedback">Campo 'Nombre' valido!</div>
+                            <div class="invalid-feedback">El campo 'Nombre' se encuentra vacío!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido" placeholder="Apellido"
+                                autofocus required>
+                            <div class="valid-feedback">Campo 'Apellido' valido!</div>
+                            <div class="invalid-feedback">El campo 'Apellido' se encuentra vacío!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" placeholder="Descripcion"
+                                autofocus required>
+                            <div class="valid-feedback">Campo 'Descripcion' valido!</div>
+                            <div class="invalid-feedback">El campo 'Descripcion' se encuentra vacío!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="img">Imagen</label>
+                            <input class="form-control" type="file" id="img" name="img" [(ngModel)]="persona.img"
+                                (change)="uploadImage($event)" accept=".jpg, .jpeg, .png, .bmp" >
+                        </div>
+                        
+                        <div class="imagen">
+                            <img [src]="imageService.url" alt="">
+                        </div>
+
+                        <div class="botones">
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn submit">Actualizar</button>
+                            </div>
+                            <div class="form-button mt-3">
+                                <button id="cancelar" type="submit" class="btn btn-danger"
+                                    (click)="cancelar()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Añadir Skill</h3><img alt="" width="65" height="65" src="../../../assets/img/add-icon.jpg"
+                        id="add-icon">
+                    <p>Por favor, complete todos los campos</p>
+                    <form class="requires-validation" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Skill" autofocus
+                                required>
+                            <div class="valid-feedback">Campo 'Skill' valido!</div>
+                            <div class="invalid-feedback">El campo 'Skill' se encuentra vacío!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" placeholder="Porcentaje"
+                                required>
+                            <div class="valid-feedback">Campo 'porcentaje' valido!</div>
+                            <div class="invalid-feedback">El campo 'porcentaje' se encuentra vacío!</div>
+                        </div>
+                        <div class="botones">
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn submit">Añadir</button>
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="cancelar" type="submit" class="btn btn-danger"
+                                    (click)="cancelar()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

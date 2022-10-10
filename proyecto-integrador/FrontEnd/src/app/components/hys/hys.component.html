@@ -1,22 +1,31 @@
 <div class="titulo">
     <h1>Hard y Soft Skills</h1>
 </div>
+
 <div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+    <div class="col-lg-2">
+        <button class="btn effect01" type="button" id="nuevaSkill" routerLink="/nuevaskill" *ngIf="isLogged">
+            <i class="bi bi-plus-circle">&nbsp;&nbsp;Añadir Skill</i>
+        </button>
+    </div>
+    <hr class="my-1" *ngIf="isLogged">
+
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
         <circle-progress
-        [title]="'HTML'"
+        [title]="(skill.nombre)"
+        [showTitle]="true"
         [showSubtitle]="false"
         [showUnits]="false"
         [titleFontSize]="'1.5em'"
         [titleColor]="'red'"
         [titleFontWeight]="'500'"
 
-        [imageSrc]="'../assets/img/logo_html5.png'"
-        [showImage]="true"
+        [imageSrc]="''"
+        [showImage]="false"
         [imageHeight]="75"
         [imageWidth]="75"
 
-        [percent]="25"
+        [percent]="(skill.porcentaje)"
         [radius]="100"
         [outerStrokeWidth]="16"
         [innerStrokeWidth]="8"
@@ -25,125 +34,16 @@
         [animation]="true"
         [animationDuration]="300"
     ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [title]="'CSS'"
-        [showSubtitle]="false"
-        [showUnits]="false"
-        [titleFontSize]="'1.5em'"
-        [titleColor]="'red'"
-        [titleFontWeight]="'500'"
 
-        [imageSrc]="'../assets/img/logo_css3.png'"
-        [showImage]="true"
-        [imageHeight]="85"
-        [imageWidth]="75"
-
-        [percent]="20"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0f70c5'"
-        [innerStrokeColor]="'#3179b89d'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [title]="'JS'"
-        [showSubtitle]="false"
-        [showUnits]="false"
-        [titleFontSize]="'1.5em'"
-        [titleColor]="'red'"
-        [titleFontWeight]="'500'"
-
-        [imageSrc]="'../assets/img/logo_js.png'"
-        [showImage]="true"
-        [imageHeight]="75"
-        [imageWidth]="55"
-
-        [percent]="15"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0f70c5'"
-        [innerStrokeColor]="'#3179b89d'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [title]="'Java'"
-        [showSubtitle]="false"
-        [showUnits]="false"
-        [titleFontSize]="'1.5em'"
-        [titleColor]="'red'"
-        [titleFontWeight]="'500'"
-
-        [imageSrc]="'../assets/img/logo_java.png'"
-        [showImage]="true"
-        [imageHeight]="75"
-        [imageWidth]="75"
-
-        [percent]="30"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0f70c5'"
-        [innerStrokeColor]="'#3179b89d'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [title]="'MYSQL'"
-        [showSubtitle]="false"
-        [showUnits]="false"
-        [titleFontSize]="'1.5em'"
-        [titleColor]="'red'"
-        [titleFontWeight]="'500'"
-
-        [imageSrc]="'../assets/img/logo_mysql.png'"
-        [showImage]="true"
-        [imageHeight]="75"
-        [imageWidth]="75"
-
-        [percent]="10"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0f70c5'"
-        [innerStrokeColor]="'#3179b89d'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [title]="'Ingles'"
-        [showSubtitle]="false"
-        [showUnits]="false"
-        [titleFontSize]="'1.5em'"
-        [titleColor]="'red'"
-        [titleFontWeight]="'500'"
-
-        [imageSrc]="'../assets/img/logo_ingles.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="100"
-
-        [percent]="70"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0f70c5'"
-        [innerStrokeColor]="'#3179b89d'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <div *ngIf="isLogged">
+            <td *ngIf="isLogged">
+                <button class="btn btn-dark" id="editar" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil-square"></i></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" id="eliminar" (click)="delete(skill.id, skill.nombre)">
+                    <i class="bi bi-x-square"></i></button>
+            </td>
+        </div>
     </div>
 </div>
