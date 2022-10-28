@@ -9,7 +9,7 @@
                     <form class="requires-validation" (ngSubmit)="onCreate()" novalidate #f="ngForm">
 
                         <div class="col-md-12">
-                            <input class="form-control" type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Skill" autofocus
+                            <input class="form-control" type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Skill" appAutoFocusDirective autofocus
                                 required>
                             <div class="valid-feedback">Campo 'Skill' valido!</div>
                             <div class="invalid-feedback">El campo 'Skill' se encuentra vacío!</div>
@@ -18,7 +18,7 @@
                         <div class="col-md-12">
                             <input class="form-control" type="text" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" placeholder="Porcentaje"
                                 required>
-                            <div class="valid-feedback">Campo 'porcentaje' valido!</div>
+                            <div class="">Campo 'porcentaje' valido!</div>
                             <div class="invalid-feedback">El campo 'porcentaje' se encuentra vacío!</div>
                         </div>
                         <div class="botones">
@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="form-button mt-3">
-                                <button id="cancelar" type="submit" class="btn btn-danger"
+                                <button id="cancelar" type="submit" class="btn btn41-43 btn-43 act"
                                     (click)="cancelar()">Cancelar</button>
                             </div>
                         </div>

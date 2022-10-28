@@ -30,7 +30,7 @@ export class HysComponent implements OnInit {
   }
 
   delete(id: number, nombreSkill: string) {
-    if(confirm("¿Está seguro de que desea eliminar el elemento '" + nombreSkill + "' ?")) {
+    if(confirm("¿Está seguro de que desea eliminar la skill '" + nombreSkill + "' ?")) {
       if(id != undefined) {
         this.sSkill.delete(id).subscribe(
           data => {

@@ -94,10 +94,12 @@
     background-color: #fff;
     font-size: 15px;
     font-weight: 300;
-    color: #8D8D8D;
+    color: #6e6a6a;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 16px;
+    /* prueba */
+    font-weight: 400;
 }
 
 .btn-primary {
@@ -136,3 +138,14 @@
     bottom: 60px;
     left: 20px;
 }
+
+
+.col-md-12 input[type=text]:focus {
+    background-color: rgb(67, 66, 66);
+    color: white;
+}
+
+::placeholder {
+    color: rgb(152, 152, 152);
+    opacity: 1;
+  }

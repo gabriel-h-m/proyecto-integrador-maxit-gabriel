@@ -11,7 +11,7 @@
                         <div class="col-md-12">
                             <input class="form-control" type="text" id="nombreExp" name="nombreExp"
                                 [(ngModel)]="expLaboral.nombreExp" placeholder="Nombre/Razón Social/Denominación"
-                                autofocus required>
+                                appAutoFocusDirective autofocus required>
                             <div class="valid-feedback">Campo 'Nombre' valido!</div>
                             <div class="invalid-feedback">El campo 'Nombre' se encuentra vacío!</div>
                         </div>
@@ -28,7 +28,7 @@
                                 <button id="submit" type="submit" class="btn submit">Actualizar</button>
                             </div>
                             <div class="form-button mt-3">
-                                <button id="cancelar" type="submit" class="btn btn-danger"
+                                <button id="cancelar" type="submit" class="btn41-43 btn-43 act"
                                     (click)="cancelar()">Cancelar</button>
                             </div>
                         </div>

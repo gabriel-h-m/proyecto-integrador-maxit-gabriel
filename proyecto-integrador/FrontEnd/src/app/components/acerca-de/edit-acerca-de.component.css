@@ -1,0 +1,17 @@
+@import "../../../assets/css/form-actualizar.css";
+@import "../../../assets/css/btn-enviar.css";
+@import "../../../assets/css/btn-cancelar.css";
+
+.botones {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-top: 30px;
+}
+
+.imagen {
+  padding: 40px 0px 0px 20px;
+}

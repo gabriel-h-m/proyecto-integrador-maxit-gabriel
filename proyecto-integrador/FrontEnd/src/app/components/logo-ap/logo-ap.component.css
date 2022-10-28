@@ -64,6 +64,16 @@ img {
     align-items: center;
 }
 
+.blink {
+    animation:blinker 5s infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+
 @media (max-width: 575px) {
     .contenedor {
         flex-direction: column;

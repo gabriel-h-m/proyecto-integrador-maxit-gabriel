@@ -4,11 +4,20 @@ import { Persona } from 'src/app/model/persona.model';
 import { ImageService } from 'src/app/service/image.service';
 import { PersonaService } from 'src/app/service/persona.service';
 
+declare function foco(campo: string): any;
+
 @Component({
   selector: 'app-edit-acerca-de',
   templateUrl: './edit-acerca-de.component.html',
-  styleUrls: ['./edit-acerca-de.component.css']
+  styleUrls: ['./edit-acerca-de.component.css'],
+  styles: [`
+    :host {
+        display: block;
+        background-color: #152733;
+    }
+  `]
 })
+
 export class EditAcercaDeComponent implements OnInit {
   persona: Persona = null;
 
@@ -25,6 +34,7 @@ export class EditAcercaDeComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+    foco("nombre");
   }
 
   onUpdate(): void {

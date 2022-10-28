@@ -19,83 +19,85 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
-@CrossOrigin(origins = { "https://frontend--gabriel.web.app", "http://localhost:4200" })
 @RequestMapping("/skill")
+@CrossOrigin(origins = {"https://frontend--gabriel.web.app", "http://localhost:4200"})
 public class CHardSoft {
+
     @Autowired
     SHardSoft sHS;
-    
+
     @GetMapping("/lista")
     public ResponseEntity<List<HardSoft>> list() {
         List<HardSoft> list = sHS.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-    
+
     @GetMapping("/detail/{id}")
     public ResponseEntity<HardSoft> getById(@PathVariable("id") int id) {
         if (!sHS.existsById(id)) {
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.NOT_FOUND);
         }
-        
+
         HardSoft skill = sHS.getOne(id).get();
         return new ResponseEntity(skill, HttpStatus.OK);
     }
-    
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if (!sHS.existsById(id)) {
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.NOT_FOUND);
         }
-        
+
         sHS.delete(id);
         return new ResponseEntity(new Mensaje("Skill eliminada"), HttpStatus.OK);
     }
-    
+
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DTOHardSoft dtoHardSoft) {
-        if (StringUtils.isBlank(dtoHardSoft.getNombre())) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
-        
         if (sHS.existsByNombre(dtoHardSoft.getNombre())) {
             return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         }
         
+        if (StringUtils.isBlank(dtoHardSoft.getNombre())) {
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        
+        if (StringUtils.isBlank(Integer.toString(dtoHardSoft.getPorcentaje()))) {
+            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+
         HardSoft skill = new HardSoft(dtoHardSoft.getNombre(), dtoHardSoft.getPorcentaje());
         sHS.save(skill);
-        
+
         return new ResponseEntity(new Mensaje("Skill creada con éxito!"), HttpStatus.OK);
     }
-    
-    
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DTOHardSoft dtoHardSoft) {
         if (!sHS.existsById(id)) {
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.NOT_FOUND);
         }
-        
+
         if (sHS.existsByNombre(dtoHardSoft.getNombre()) && sHS.getByNombre(dtoHardSoft.getNombre()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         }
-        
+
         if (StringUtils.isBlank(dtoHardSoft.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        
-//        if (StringUtils.isBlank(dtoHardSoft.getPorcentaje())) {
-//            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
-//        }
-        
+
+        if (StringUtils.isBlank(Integer.toString(dtoHardSoft.getPorcentaje()))) {
+            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+
         HardSoft skill = sHS.getOne(id).get();
         skill.setNombre(dtoHardSoft.getNombre());
         skill.setPorcentaje(dtoHardSoft.getPorcentaje());
-        
+
         sHS.save(skill);
-        
+
         return new ResponseEntity(new Mensaje("Skill actualizada con exito!"), HttpStatus.OK);
     }
-    
-    
+
 }

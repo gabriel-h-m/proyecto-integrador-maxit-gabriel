@@ -1,5 +1,6 @@
 @import "../../../assets/css/form-actualizar.css";
 @import "../../../assets/css/btn-enviar.css";
+@import "../../../assets/css/btn-cancelar.css";
 
 .botones {
     justify-content: space-between;

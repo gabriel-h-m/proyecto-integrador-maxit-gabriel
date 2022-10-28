@@ -6,12 +6,18 @@ import { SkillService } from 'src/app/service/skill.service';
 @Component({
   selector: 'app-new-skill',
   templateUrl: './new-skill.component.html',
-  styleUrls: ['./new-skill.component.css']
+  styleUrls: ['./new-skill.component.css'],
+  styles: [`
+    :host {
+        display: block;
+        background-color: #152733;
+    }
+  `]
 })
 
 export class NewSkillComponent implements OnInit {
   nombre: string;
-  porcentaje: number;
+  porcentaje: number = null; // cambiar si da problemas
 
   constructor(private sSkill: SkillService, private router: Router) { }
 
@@ -20,15 +26,19 @@ export class NewSkillComponent implements OnInit {
   }
 
   onCreate(): void {
-    const skill = new Skill(this.nombre, this.porcentaje);
-    this.sSkill.save(skill).subscribe(
-      data => {
-        alert("Skill añadida!");
-        this.router.navigate(['']);
-      }, err => {
-        alert("No se pudo añadir la nueva skill");
-        // this.router.navigate(['']);
-      })
+    if (this.porcentaje != null && this.porcentaje != 0) { // cambiar si da problemas
+
+      const skill = new Skill(this.nombre, this.porcentaje);
+      this.sSkill.save(skill).subscribe(
+        data => {
+          alert("Skill añadida!");
+          this.router.navigate(['']);
+        }, err => {
+          alert("No se pudo añadir la nueva skill");
+          // this.router.navigate(['']);
+        })
+
+    }
   }
 
   public cargarScript(url: string) {
